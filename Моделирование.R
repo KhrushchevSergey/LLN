@@ -43,7 +43,7 @@ for (i in 1:4) {
   n <- c(10, 100, 1000, 10000)[i]
   result <- data.frame(Исход = names(results_list[[i]]),
                        Количество_бросков = n,
-                       Количество_выпадений = round(results_list[[i]]),
+                       Количество_выпадений = results_list[[i]]/100*n,
                        Процент = round(results_list[[i]], 1))
   print(result)
   all_results <- rbind(all_results, result)
@@ -94,7 +94,7 @@ for (i in 1:4) {
   n <- c(10, 100, 1000, 10000)[i]
   result <- data.frame(Исход = names(results_dice_list[[i]]),
                        Количество_бросков = n,
-                       Количество_выпадений = round(results_dice_list[[i]] / 100 * n),
+                       Количество_выпадений = results_dice_list[[i]] / 100 * n,
                        Процент = round(results_dice_list[[i]], 1))
   all_results <- rbind(all_results, result)
 }
@@ -160,7 +160,7 @@ for (i in 1:4) {
   n <- c(10, 100, 1000, 10000)[i]
   result <- data.frame(Исход = 2:12,
                        Количество_бросков = n,
-                       Количество_выпадений = round(results_two_dice_list[[i]]),
+                       Количество_выпадений = results_two_dice_list[[i]]/100*n,
                        Процент = round(results_two_dice_list[[i]], 1))
   all_results <- rbind(all_results, result)
 }
